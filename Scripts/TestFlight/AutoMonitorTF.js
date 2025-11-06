@@ -60,7 +60,9 @@ const userAgents = [
     counter++;
   }
 
-  if (isNode) await sendMsg($.nodeNotifyMsg.join("\n"), "");
+  if (isNode && $.nodeNotifyMsg.length > 0) {
+    await sendMsg($.nodeNotifyMsg.join("\n"), "");
+  }
   $.done();
 })();
 
